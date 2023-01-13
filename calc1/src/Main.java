@@ -1,6 +1,5 @@
 import java.io.IOException;
 import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
         System.out.println("ВВедите операцию  через пробел с двумя числами от 1 до 10 или от I до X");
@@ -12,16 +11,13 @@ public class Main {
              catch (IOException e) {System.out.println("строка не является математической операцией");}}
         else{ if(strings.length>3){
             try{ throw new IOException();}
-            catch (IOException e) {System.out.println("формат математической операции не удовлетворяет заданию");}}
-            }
+            catch (IOException e) {System.out.println("формат математической операции не удовлетворяет заданию");}}}
         if(strings.length==3){
-
         int a=0; //Integer.parseInt(strings[0]);
         int b=0; //Integer.parseInt(strings[2]);
         int c=0;
         int d=0;
         int f=0;
-
         switch (strings[0]){
             case "I": a=1; d=1; break;
             case "II": a=2; d=1; break;
@@ -42,8 +38,7 @@ public class Main {
             case "7": a=7; d=2; break;
             case "8": a=8; d=2; break;
             case "9": a=9; d=2; break;
-            case "10": a=10; d=2; break;
-        }
+            case "10": a=10; d=2; break;}
             switch (strings[2]){
                 case "I": b=1; f=1; break;
                 case "II": b=2; f=1; break;
@@ -64,8 +59,7 @@ public class Main {
                 case "7": b=7; f=2; break;
                 case "8": b=8; f=2; break;
                 case "9": b=9; f=2; break;
-                case "10": b=10; f=2; break;
-            }
+                case "10": b=10; f=2; break;}
             if((a>10)||(a<1)||(b>10)||(b<1)){
                 try{ throw new IOException();}
                 catch (IOException e) {System.out.println("возможны только числа от 1 до 10");}}
@@ -74,13 +68,14 @@ public class Main {
                 try{ throw new IOException();}
                 catch (IOException e) {System.out.println("используются одновременно разные системы счисления");}}
             else{
-
             switch(strings[1].codePointAt(0)) {
             case 43:  c = a+b; break;
             case 45:  c = a-b; break;
             case 42:  c = a*b; break;
             case 47:  c = a/b; break;
-            }
+                default: {
+                    try{ throw new IOException();}
+                catch (IOException e) {System.out.println("неправильный математический оператор");}}}
             String kon1 = " ";
             String kon2 = " ";
             int g,h;
@@ -113,11 +108,6 @@ public class Main {
                             case 9: kon1="XC"; break;
                             case 10: kon1="C"; break;
                     }System.out.println("="+kon1+kon2);}
-                else{
-
-
-
-                System.out.println("="+c);}}
-        }}}
-    }
+                else{ System.out.println("="+c);
+                }}}}}}
 }
