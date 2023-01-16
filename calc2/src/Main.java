@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        System.out.println("ВВедите операцию  через пробел с двумя числами от 1 до 10 или от I до X");
+        slave();
         Scanner sum = new Scanner(System.in);
         String sm = sum.nextLine();
         String [] strings = sm.split(" ");
@@ -110,4 +110,5 @@ public class Main {
                     }System.out.println("="+kon1+kon2);}
                 else{ System.out.println("="+c);
                 }}}}}}
+    static void slave(){System.out.println("ВВедите операцию  через пробел с двумя числами от 1 до 10 или от I до X");}
 }
