@@ -1,8 +1,11 @@
 import java.io.IOException;
 import java.util.Scanner;
 public class Main {
+    public static String calc(String input){
+        input="=";
+        return input;}
     public static void main(String[] args) {
-        slave();
+        System.out.println("ВВедите операцию  через пробел с двумя числами от 1 до 10 или от I до X");
         Scanner sum = new Scanner(System.in);
         String sm = sum.nextLine();
         String [] strings = sm.split(" ");
@@ -13,11 +16,7 @@ public class Main {
             try{ throw new IOException();}
             catch (IOException e) {System.out.println("формат математической операции не удовлетворяет заданию");}}}
         if(strings.length==3){
-        int a=0; //Integer.parseInt(strings[0]);
-        int b=0; //Integer.parseInt(strings[2]);
-        int c=0;
-        int d=0;
-        int f=0;
+        int a=0; int b=0; int c=0; int d=0; int f=0; int j=0;
         switch (strings[0]){
             case "I": a=1; d=1; break;
             case "II": a=2; d=1; break;
@@ -75,7 +74,7 @@ public class Main {
             case 47:  c = a/b; break;
                 default: {
                     try{ throw new IOException();}
-                catch (IOException e) {System.out.println("неправильный математический оператор");}}}
+                catch (IOException e) {System.out.println("неправильный математический оператор"); j=1;}}}
             String kon1 = " ";
             String kon2 = " ";
             int g,h;
@@ -107,8 +106,5 @@ public class Main {
                             case 8: kon1="LXXX"; break;
                             case 9: kon1="XC"; break;
                             case 10: kon1="C"; break;
-                    }System.out.println("="+kon1+kon2);}
-                else{ System.out.println("="+c);
-                }}}}}}
-    static void slave(){System.out.println("ВВедите операцию  через пробел с двумя числами от 1 до 10 или от I до X");}
-}
+                    }System.out.println(calc("")+kon1+kon2);}
+                else{ if (j!=1){System.out.println(calc("")+c);}}}}}}}}
